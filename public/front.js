@@ -113,32 +113,36 @@ projects.forEach((project) => {
 
   // outside
   project.addEventListener("click", () => {
-    //iFrame
-    const ImageWrapper = document.createElement("div");
-    ImageWrapper.className = "project_img_wrapper";
-    container.appendChild(ImageWrapper);
+    if (window.innerWidth > 1100) {
+      //iFrame
+      const ImageWrapper = document.createElement("div");
+      ImageWrapper.className = "project_img_wrapper";
+      container.appendChild(ImageWrapper);
 
-    // iImage;
-    const InwrapperImg = document.createElement("img");
-    InwrapperImg.className = "project_img";
+      // iImage;
+      const InwrapperImg = document.createElement("img");
+      InwrapperImg.className = "project_img";
 
-    // find img path and set it in InwrapperImg
-    const imgPath = project.firstElementChild.getAttribute("src").split(".")[1];
-    InwrapperImg.setAttribute("src", `.${imgPath}-big.jpg`);
-    // console.log(imgPath);
-    ImageWrapper.appendChild(InwrapperImg);
+      // find img path and set it in InwrapperImg
+      const imgPath = project.firstElementChild
+        .getAttribute("src")
+        .split(".")[1];
+      InwrapperImg.setAttribute("src", `.${imgPath}-big.jpg`);
+      // console.log(imgPath);
+      ImageWrapper.appendChild(InwrapperImg);
 
-    //hide body scroll bar
-    document.body.style.overflow = "hidden";
+      //hide body scroll bar
+      document.body.style.overflow = "hidden";
 
-    // hide entire iframe and show back body scroll bar
-    hideIframe.classList.add("show_close_button");
+      // hide entire iframe and show back body scroll bar
+      hideIframe.classList.add("show_close_button");
 
-    hideIframe.onclick = () => {
-      hideIframe.classList.remove("show_close_button");
-      ImageWrapper.remove();
-      document.body.style.overflow = "scroll";
-    };
+      hideIframe.onclick = () => {
+        hideIframe.classList.remove("show_close_button");
+        ImageWrapper.remove();
+        document.body.style.overflow = "scroll";
+      };
+    }
   });
 });
 

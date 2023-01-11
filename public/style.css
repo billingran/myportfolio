@@ -212,6 +212,7 @@ a {
   align-items: center;
   flex: 2 1 50px;
   cursor: pointer;
+  text-align: right;
 }
 
 .header .nav_container .nav_switch_container .menuToggle {
