@@ -1,3 +1,8 @@
+//put back scroll bar
+window.onload = function () {
+  window.scrollTo(0, -1);
+};
+
 // nav backgorund
 let navLogo = document.querySelector(".nav_container");
 let headerBackground = document.querySelector(".nav_container");

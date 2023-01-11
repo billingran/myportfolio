@@ -516,7 +516,7 @@ a {
   }
 
   .home .head_content .head_icon_button_container {
-    width: 85%;
+    width: 100%;
   }
 }
 
@@ -527,10 +527,6 @@ a {
 
   :root {
     --home-text: 1.7vw;
-  }
-
-  .home .head_content .head_icon_button_container {
-    width: 85%;
   }
 }
 

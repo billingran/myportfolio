@@ -70,7 +70,7 @@ a {
   right: 0px;
   bottom: -40%;
   transform: translateX(20px);
-  animation: turnUp 2s 5s forwards;
+  animation: turnUp 2s 2.5s forwards;
 }
 
 @keyframes turnUp {
