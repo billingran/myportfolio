@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/respond.css" />
+    <link rel="stylesheet" href="/footer_animation.css" />
+
+    <!-- iconScount -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <title>Réponse</title>
+  </head>
+  <body>
+    <div class="joke_container">
+      <div class="joke_text">
+        <div class="answer"><%= joke.delivery %></div>
+        <div class="joke"><%= joke.setup %></div>
+      </div>
+      <div class="arrow"></div>
+    </div>
+    <section class="submission_container section">
+      <h2 class="section_title">Merci pour votre message</h2>
+      <h3 class="submission_subtitle">Je vous contacterai dès que possible</h3>
+
+      <div class="infos_container">
+        <div class="mystyle">
+          <i class="uil uil-user contact_icon"></i>
+          <span class="contact_subtitle" title="mon nom"><%= user_name %></span>
+        </div>
+        <div class="middle_space mystyle">
+          <i class="uil uil-phone contact_icon"></i>
+          <span class="contact_subtitle" title="mon numéro"
+            ><%= user_number %></span
+          >
+        </div>
+        <div class="mystyle">
+          <i class="uil uil-envelope contact_icon"></i>
+          <span class="contact_subtitle" title="mon email"
+            ><%= user_email %></span
+          >
+        </div>
+        <div class="mystyle middle_space">
+          <i class="uil uil-comment-message contact_icon"></i>
+          <span class="contact_subtitle more_spacer" title="mon adress">
+            <%= my_message %></span
+          >
+        </div>
+      </div>
+
+      <div class="face_container">
+        <a href="/myportfolio" title="mon portfolio"
+          ><iconify-icon
+            icon="ic:outline-log-out"
+            class="home_icons"
+          ></iconify-icon>
+          <p class="home_text">mon portfolio</p></a
+        >
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <div class="waves">
+        <div class="waveu" id="wave1"></div>
+        <div class="waveu" id="wave2"></div>
+        <div class="waveu" id="wave3"></div>
+        <div class="waveu" id="wave4"></div>
+      </div>
+      <ul class="social_icon">
+        <li>
+          <a href="#" target="_blank" title="mon linkedin"
+            ><i class="uil uil-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="mon github"
+            ><i class="uil uil-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="mon facebook"
+            ><i class="uil uil-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="mon instagram"
+            ><i class="uil uil-instagram-alt"></i
+          ></a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li><a href="#home" title="menu">Menu</a></li>
+        <li><a href="#moi" title="à propose de moi">Moi</a></li>
+        <li><a href="#skill" title="compétence">Compétence</a></li>
+        <li><a href="#portfolio" title="portfolio">Portfolio</a></li>
+        <li><a href="#contact" title="contact">Contact</a></li>
+      </ul>
+      <p>billingran@gmail.com | HTW | +33 7 67 25 86 03</p>
+
+      <div class="waves">
+        <div class="waved" id="wave5"></div>
+        <div class="waved" id="wave6"></div>
+        <div class="waved" id="wave7"></div>
+        <div class="waved" id="wave8"></div>
+      </div>
+    </footer>
+
+    <!-- iconify icon usage -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+  </body>
+</html>
