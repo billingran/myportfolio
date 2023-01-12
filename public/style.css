@@ -279,6 +279,16 @@ a {
 }
 
 @media screen and (max-width: 773px) {
+  .header .nav_container {
+    justify-content: flex-start;
+  }
+
+  .header .nav_container .nav_switch_container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
   .header .nav_container .nav_switch_container .menuToggle {
     opacity: 1;
     visibility: visible;
