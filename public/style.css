@@ -885,6 +885,27 @@ a {
   font-size: 8rem;
 }
 
+@media screen and (max-width: 820px) {
+  .color_one {
+    color: #f75421;
+  }
+  .color_two {
+    color: #2862e9;
+  }
+  .color_three {
+    color: #e8d44d;
+  }
+  .color_four {
+    color: #509941;
+  }
+  .color_five {
+    color: #00e15f;
+  }
+  .color_six {
+    color: #c53635;
+  }
+}
+
 /* portfolio */
 
 /* inside */
