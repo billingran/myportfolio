@@ -279,13 +279,17 @@ a {
 }
 
 @media screen and (max-width: 773px) {
+  .section {
+    margin: 2.5rem auto 1rem;
+  }
+
   .header .nav_container {
     justify-content: flex-start;
   }
 
   .header .nav_container .nav_switch_container {
     position: fixed;
-    top: 20px;
+    top: 18.5px;
     right: 20px;
   }
 
