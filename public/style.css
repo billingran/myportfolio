@@ -51,6 +51,7 @@ a {
   --home-text: 1.2vw;
   --home-button-text: 1.1vw;
   --home-button-padding: 1.1vw;
+  --home_button_icon: 1.5vw;
   --home-icons: 1.5rem;
 
   /* the rest of font size*/
@@ -476,6 +477,12 @@ a {
   align-items: center;
 }
 
+.home_button_icon {
+  margin-left: 0.3rem;
+  font-size: var(--home_button_icon);
+  transition: 0.25s;
+}
+
 .home .head_content .head_icon_button_container .head_icon {
   font-size: var(--home-icons);
   color: var(--dark-gray);
@@ -516,18 +523,15 @@ a {
 
     /* home */
     --home-subtitle: 2.6vw;
-    --home-text: 1.8vw;
+    --home-text: 1.5vw;
     --home-button-text: 1.9vw;
     --home-button-padding: 1.9vw;
+    --home_button_icon: 2.5vw;
     --home-icons: 2.8vw;
   }
 
   .home .head_content {
     top: 28%;
-  }
-
-  :root {
-    --home-text: 1.5vw;
   }
 
   .home .head_content .head_icon_button_container {
