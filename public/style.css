@@ -889,6 +889,18 @@ a {
   font-size: 8rem;
 }
 
+.skills
+  .skill_container
+  .skill_middle_container
+  .middle_anim7:hover
+  .skill_icon,
+.middle_anim7:hover .skill_title {
+  color: #00758f;
+  transform: translateY(-1rem);
+  transition: all 0.25s;
+  font-size: 8rem;
+}
+
 @media screen and (max-width: 820px) {
   .color_one {
     color: #f75421;
@@ -907,6 +919,9 @@ a {
   }
   .color_six {
     color: #c53635;
+  }
+  .color_seven {
+    color: #00758f;
   }
 }
 
