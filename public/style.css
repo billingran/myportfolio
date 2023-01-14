@@ -1199,7 +1199,7 @@ a {
 
 .contact .contact_container .clients_info_container .seperate_form {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 1rem 0 0 0;
 }
 
