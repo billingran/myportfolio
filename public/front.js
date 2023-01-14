@@ -8,7 +8,6 @@ let navLogo = document.querySelector(".nav_container");
 let headerBackground = document.querySelector(".nav_container");
 
 function turnDark() {
-  // console.log(window.pageYOffset);
   if (window.pageYOffset) {
     navLogo.classList.add("turnblack");
     navLogo.classList.add("active");
@@ -33,12 +32,21 @@ menuToggle.addEventListener("click", (e) => {
   navigationContent.classList.toggle("show-menu");
 });
 
+//hide menu
+const navLink = document.querySelectorAll(".nav_link");
+
+function linkAction() {
+  const navMenu = document.querySelector(".nav_content_container");
+  navMenu.classList.remove("show-menu");
+  navigation.classList.toggle("active");
+}
+navLink.forEach((n) => n.addEventListener("click", linkAction));
+
 /*Scroll section and avtive link mixed*/
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
   const scrollY = window.pageYOffset;
-  // console.log(scrollY);
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
@@ -71,6 +79,46 @@ function scrollActive() {
   });
 }
 window.addEventListener("scroll", scrollActive);
+
+// Progress button
+const progressBar = document.querySelector(".progress_bar");
+const halfCircles = document.querySelectorAll(".half_circle");
+const halfCircleTop = document.querySelector(".half_circle_top");
+const progressBarCircle = document.querySelector(".progress_bar_circle");
+
+function progressBarSet() {
+  const pageHeight = document.documentElement.scrollHeight;
+  const pageViewportHeight = window.innerHeight;
+  const scrolledPortion = window.pageYOffset;
+
+  if (scrolledPortion >= 750) {
+    progressBar.style.bottom = `29.5%`;
+  } else {
+    progressBar.style.bottom = `-20%`;
+  }
+
+  const scrolledPortionDegree =
+    (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
+
+  if (scrolledPortionDegree >= 359) {
+    progressBarCircle.classList.add("progress_turn_up");
+  } else {
+    progressBarCircle.classList.remove("progress_turn_up");
+  }
+
+  halfCircles.forEach((el) => {
+    el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
+
+    if (scrolledPortionDegree >= 180) {
+      halfCircles[0].style.transform = `rotate(180deg)`;
+      halfCircleTop.style.opacity = "0";
+    } else {
+      halfCircleTop.style.opacity = "1";
+    }
+  });
+}
+
+document.addEventListener("scroll", progressBarSet);
 
 //experience
 let firstPart = document.querySelector(".experience_content_first");
@@ -128,7 +176,6 @@ projects.forEach((project) => {
         .getAttribute("src")
         .split(".")[1];
       InwrapperImg.setAttribute("src", `.${imgPath}-big.jpg`);
-      // console.log(imgPath);
       ImageWrapper.appendChild(InwrapperImg);
 
       //hide body scroll bar
@@ -156,9 +203,7 @@ myName.addEventListener("input", (a) => {});
 
 myNumber.addEventListener("input", (b) => {});
 
-myEmail.addEventListener("input", (c) => {
-  console.log(c);
-});
+myEmail.addEventListener("input", (c) => {});
 
 sendButton.addEventListener("click", (d) => {
   let first = myName.value;
@@ -168,7 +213,15 @@ sendButton.addEventListener("click", (d) => {
   let third = myEmail.value;
   let mailMarker = third.indexOf("@");
   let mailPoint = third.indexOf(".");
-  if (nameRules.test(first) == false) {
+  let empty = "";
+  if (
+    myName.value === empty ||
+    myNumber.value === empty ||
+    myEmail.value === empty
+  ) {
+    d.preventDefault();
+    alert("Votre formulaire est vide");
+  } else if (nameRules.test(first) == false) {
     d.preventDefault();
     alert("Seulement des lettres et tirets dans le champs de nom");
   } else if (numberRules.test(second) == false) {
@@ -181,53 +234,3 @@ sendButton.addEventListener("click", (d) => {
     );
   }
 });
-
-// Progress button
-const progressBar = document.querySelector(".progress_bar");
-const halfCircles = document.querySelectorAll(".half_circle");
-const halfCircleTop = document.querySelector(".half_circle_top");
-const progressBarCircle = document.querySelector(".progress_bar_circle");
-
-function progressBarSet() {
-  const pageHeight = document.documentElement.scrollHeight;
-  const pageViewportHeight = window.innerHeight;
-  const scrolledPortion = window.pageYOffset;
-
-  if (scrolledPortion >= 750) {
-    progressBar.style.bottom = `29.5%`;
-  } else {
-    progressBar.style.bottom = `-20%`;
-  }
-
-  const scrolledPortionDegree =
-    (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
-
-  if (scrolledPortionDegree >= 359) {
-    progressBarCircle.classList.add("progress_turn_up");
-  } else {
-    progressBarCircle.classList.remove("progress_turn_up");
-  }
-
-  halfCircles.forEach((el) => {
-    el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
-
-    if (scrolledPortionDegree >= 180) {
-      halfCircles[0].style.transform = `rotate(180deg)`;
-      halfCircleTop.style.opacity = "0";
-    } else {
-      halfCircleTop.style.opacity = "1";
-    }
-  });
-}
-
-document.addEventListener("scroll", progressBarSet);
-
-//hide menu
-const navLink = document.querySelectorAll(".nav_link");
-
-function linkAction() {
-  const navMenu = document.querySelector(".nav_content_container");
-  navMenu.classList.remove("show-menu");
-  navigation.classList.toggle("active");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
